@@ -1,0 +1,30 @@
+.header {
+  background-color:#39a8f7;
+  height:100rpx;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90rpx;  
+  font-size:50rpx;
+  color: rgb(255, 255, 255);
+}
+
+.column {
+  display: flex;
+  margin-top:20rpx;
+  
+  height:50rpx;
+  width: 100%;
+  
+}
+
+.input-column {
+  width:70%;
+  height: 100%;
+  margin-left: 5rpx;
+  border:1rpx solid black;
+}
+
+.column > text {
+  width:30%;
+  font-size:35rpx;
+}

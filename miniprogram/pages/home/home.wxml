@@ -1,0 +1,15 @@
+
+<view wx:if="{{Ismanager}}">
+
+
+<button type="primary" bindtap="getOpenID"> Get!</button>
+</view>
+
+<text wx:else>sorry, you don't have the right to access the page</text>
+
+
+<view><text user-select="true">
+  {{user_openid}}
+</text></view>
+
+

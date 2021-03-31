@@ -1,0 +1,90 @@
+<view class='top'>
+  <view class='top_button'>
+    <van-button size='large'color='#39a8f7' bind:click='selectAll'>全选</van-button> 
+  </view>
+</view>
+
+
+  
+<van-checkbox-group value="{{ result }}" bind:change="onChange" >
+  <van-cell-group>
+    <van-cell
+      wx:for="{{ listData }}"
+      wx:key="index"
+      title="{{item.main_info.name}} {{ item.main_info.model }}"
+      value-class="value-class"
+      clickable
+      data-index="{{ index }}"
+      bind:click="toggle"
+    >
+      <van-checkbox
+        catch:tap="noop"
+        class="checkboxes-{{ index }}"
+        name="{{ item.main_info.fullname }}"
+      />
+    </van-cell>
+  </van-cell-group>
+</van-checkbox-group>
+
+
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+<view>sa</view>
+
+
+<view style="height:200rpx"></view>
+<view class = 'bottom-button'>
+
+<van-button type="danger" size= 'large' bind:click='delete'>删除全部</van-button>
+<van-button type="primary" size= 'large' bind:click='getLink'>导出Excel表格</van-button>
+
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose">
+<view class='content-pop'>是否删除这些条数据?</view>
+
+  <view class='end_button'>
+  <view class='left-button'>
+    <van-button color = '#D3D3D3' type="default" round size='large' bind:click="onClose">取消</van-button>
+  </view>
+
+  <view class= 'right-button'>
+    <van-button type="danger" round size='large' bind:click="onDelete">提交</van-button>
+  </view>
+
+  </view>
+</van-popup>
+ 

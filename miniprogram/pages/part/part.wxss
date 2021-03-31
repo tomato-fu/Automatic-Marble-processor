@@ -1,0 +1,48 @@
+.top{
+  background-color:#39a8f7;
+  height:100rpx;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90rpx;  
+  font-size:50rpx;
+
+}
+
+.top_button{
+  float: left;
+  width: 200rpx;
+  height: 100%;
+}
+
+.value-class {
+  flex: none !important;
+}
+
+.bottom-button {
+  width:100%;
+  position: fixed;
+  bottom: 0;  
+}
+
+.end_button {
+  display: flex;
+  width: 100%;
+}
+
+.left-button {
+  float: left;
+  width: 50%;
+}
+
+.right-button {
+  float: right;
+  width: 50%;
+}
+
+.content-pop {
+  height: 500rpx;
+  width: 500rpx;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 500rpx;  
+}

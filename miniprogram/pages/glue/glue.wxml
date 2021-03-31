@@ -1,0 +1,215 @@
+<view class='title'>补胶组</view>
+
+<form bindsubmit='formsubmit'>
+  <view style="height:auto;width:90%; margin:auto;font-size:40rpx">
+
+    <view class='column'>
+      <text>品种: </text>
+      <input class='input-column'type="text" name='name' value='{{name}}' placeholder="品种" />
+    </view>
+    <view class='column'>
+      <text>编号: </text>
+      <input class='input-column'type="text" name='model' value='{{model}}' placeholder="编号" />
+    </view>
+
+  <view class='column'>
+      <text>片数: </text>
+      <input class='input-column'type="text" name='number_piece' value='{{number_piece}}' placeholder="片数" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+    <view class='column'>
+      <text style="font-size:30rpx">点胶/跑胶胶水: </text>
+      <input class='input-column'type="text" name='dian' value='{{dian}}' placeholder="点胶/跑胶胶水" />
+    </view>
+
+    <view class='timepicker'>
+
+<van-cell title-style='font-size:35rpx' title="日期" value="{{ date_up }}" bind:click="onDisplay_up" size='large' is-link />
+<van-popup show="{{ show_up }}" bind:close="onClose_up" position="bottom">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate_up }}"
+  bind:input="onInput_up"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+  bind:cancel="onClose_up"
+  bind:confirm='onConfirm_up'
+  />
+</van-popup>
+
+</view>
+    <view class='column'>
+      <text>胶水用量:</text>
+      <input  type="text"  class='input-column'name='glue_used' value='{{glue_used}}' placeholder="胶水用量" />
+    </view>
+
+    <view class='column'>
+      <text>调胶人:</text>
+      <input  type="text" class='input-column'name='glue_man' value='{{glue_man}}' placeholder="调胶人" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+    <view class='column'>
+      <text style="font-size:30rpx">背网胶水:</text>
+      <input  type="text" class='input-column'name='beiwang_glue' value='{{beiwang_glue}}' placeholder="背网胶水" />
+    </view>
+
+    <view class='timepicker'>
+
+<van-cell title-style='font-size:35rpx' title="日期" value="{{ date_down }}" bind:click="onDisplay_down" size='large' is-link />
+<van-popup show="{{ show_down }}" bind:close="onClose_down" position="bottom">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate_down }}"
+  bind:input="onInput_down"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+  bind:cancel="onClose_down"
+  bind:confirm='onConfirm_down'
+  />
+</van-popup>
+
+</view>
+    <view class='column'>
+      <text>胶水用量:</text>
+      <input  type="text"  class='input-column'name='glue_used_beiwang' value='{{glue_used_beiwang}}' placeholder="胶水用量" />
+    </view>
+
+    <view class='column'>
+      <text>调胶人:</text>
+      <input  type="text" class='input-column'name='glue_man_beiwnag' value='{{glue_man_beiwnag}}' placeholder="调胶人" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+    <view class='column'>
+      <text>刷面胶水:</text>
+      <input  type="text" class='input-column'name='shua_glue' value='{{shua_glue}}' placeholder="刷面胶水" />
+    </view>
+
+    <view class='timepicker'>
+
+<van-cell title-style='font-size:35rpx' title="日期" value="{{ date_cut }}" bind:click="onDisplay_cut" size='large' is-link />
+<van-popup show="{{ show_cut }}" bind:close="onClose_cut" position="bottom">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate_cut }}"
+  bind:input="onInput_cut"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+  bind:cancel="onClose_cut"
+  bind:confirm='onConfirm_cut'
+  />
+</van-popup>
+
+</view>
+    
+    <view class='column'>
+      <text>胶水用量:</text>
+      <input  type="text"  class='input-column'name='glue_used_shua' value='{{glue_used_shua}}' placeholder="胶水用量" />
+    </view>
+
+    <view class='column'>
+      <text>调胶人:</text>
+      <input  type="text" class='input-column'name='glue_man_shua' value='{{glue_man_shua}}' placeholder="调胶人" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+
+    <view class='column'>
+      <text>卸台车:</text>
+      <input  type="text" class='input-column'name='xie_car' value='{{xie_car}}' placeholder="卸台车" />
+    </view>
+
+    <view class='column'>
+      <text>挖补/片:</text>
+      <input  type="text" class='input-column'name='repair_piece' value='{{repair_piece}}' placeholder="挖补/片" />
+    </view>
+
+    <view class='column'>
+      <text>拼接/片:</text>
+      <input  type="text" class='input-column'name='combine_piece' value='{{combine_piece}}' placeholder="拼接/片" />
+    </view>
+
+    <view class='column'>
+      <text>加筋/片:</text>
+      <input  type="text" class='input-column'name='add_piece' value='{{add_piece}}' placeholder="加筋/片" />
+    </view>
+
+    <view class='column'>
+      <text>当班负责人:</text>
+      <input  type="text" class='input-column'name='worker_responsible_glue' value='{{worker_responsible_glue}}' placeholder="当班负责人" />
+    </view>
+
+    <view class='column'>
+      <text>补胶主管:</text>
+      <input  type="text" class='input-column'name='glue_manager' value='{{glue_manager}}' placeholder="补胶主管" />
+    </view>
+
+    <view class='column'>
+      <text>备注:</text>
+      <textarea auto-height class='input-column'name='note_3' value='{{note_3}}' placeholder="备注" />
+    </view>
+    
+    
+  
+  </view>
+
+<view class='button'>
+
+  <van-button type="primary" round size='large' form-type='submit'>提交</van-button>
+</view>
+
+<van-popup round show="{{ show_review }}" bind:close="onClose_review" position="bottom">
+  <view style="margin-left:15rpx">
+    <view>品种: {{name}}</view>
+    <view>编号: {{model}}</view>
+    <view>片数: {{number_piece}}</view>
+    <view class='divider'></view>
+    <view>点胶/跑胶胶水: {{dian}}</view>
+    <view>日期:{{date_up}}</view>
+    <view>胶水用量: {{glue_used}}</view>
+    <view>调胶人: {{glue_man}}</view>
+    <view class='divider'></view>
+    <view>背网胶水: {{beiwang_glue}}</view>
+    <view>日期: {{date_down}}</view>
+    <view>胶水用量: {{glue_used_beiwang}}</view>
+    <view>调胶人: {{glue_man_beiwnag}}</view>
+    <view class='divider'></view>
+    <view>刷面胶水: {{shua_glue}}</view>
+    <view>日期: {{date_cut}}</view>
+    <view>胶水用量: {{glue_used_shua}}</view>
+    <view>调胶人: {{glue_man_shua}}</view>
+    <view class='divider'></view>
+    <view>卸台车: {{xie_car}}</view>
+    <view>挖补/片: {{repair_piece}}</view>
+    <view>拼接/片: {{combine_piece}}</view>
+    <view>加筋/片: {{add_piece}}</view>
+    <view>当班负责人: {{worker_responsible_glue}}</view>
+    <view>补胶主管: {{glue_manager}}</view>
+    <view>备注: {{note_3}}</view>
+
+ </view>
+  <view class='end_button'>
+  <view class='left-button'>
+    <van-button color = '#D3D3D3' type="default" round size='large' bind:click="onClose_review">取消</van-button>
+  </view>
+
+  <view class= 'right-button'>
+    <van-button type="primary" round size='large' bind:click="onSave">提交</van-button>
+  </view>
+
+  </view>
+
+</van-popup>
+  
+ 
+</form>

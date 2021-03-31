@@ -1,0 +1,413 @@
+<view class='header'>
+  <view class='name'> {{listData.main_info.name}}</view>
+  <view class='icon-delete'> <van-button size='large'color='#39a8f7' bind:click='delete'>删除</van-button> 
+  </view>
+  <view class='icon'> <van-icon name="edit" bind:click='gotoEdit' /></view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose">
+<view class='content-pop'>是否删除这条数据?</view>
+
+  <view class='end_button'>
+  <view class='left-button'>
+    <van-button color = '#D3D3D3' type="default" round size='large' bind:click="onClose">取消</van-button>
+  </view>
+
+  <view class= 'right-button'>
+    <van-button type="danger" round size='large' bind:click="onDelete">提交</van-button>
+  </view>
+
+  </view>
+</van-popup>
+
+<view class='divider'>基本信息</view>
+
+<view>
+  <view style="height:auto;font-size:40rpx">
+  <view class='row'>
+    <view class='title'>品种:</view>
+    <view class='content'>{{listData.main_info.name}}</view> 
+  </view> 
+  <view class='row'>
+    <view class='title'>编号:</view>
+    <view class='content'>{{listData.main_info.model}}</view> 
+  </view>
+  <view class='row'>
+    <view class='title'>长度:</view>
+    <view class='content'>{{listData.main_info.length}}</view> 
+  </view> 
+  <view class='row'>
+    <view class='title'>宽度:</view>
+    <view class='content'>{{listData.main_info.width}}</view> 
+  </view> 
+  <view class='row'>
+    <view class='title'>高度:</view>
+    <view class='content'>{{listData.main_info.height}}</view> 
+  </view> 
+  <view class='row'>
+    <view class='title'>重量:</view>
+    <view class='content'>{{listData.main_info.weight}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>密度:</view>
+    <view class='content'>{{listData.main_info.density}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>公司:</view>
+    <view class='content'>{{listData.main_info.company}}</view> 
+  </view> 
+
+
+  <view class='row'>
+    <view class='title'>入库日期:</view>
+    <view class='content'>{{listData.main_info.date_in}}</view> 
+  </view>  
+  <view class='row'>
+    <view class='title'>出库日期:</view>
+    <view class='content'>{{listData.main_info.date_out}}</view> 
+  </view>  
+
+  <view class='divider'>生产通知</view>
+
+  
+
+  <view class='row'>
+    <view class='title'>厚度:</view>
+    <view class='content'>{{listData.production_info.thickness}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>背网:</view>
+    <view class='content'>{{listData.production_info.beiwang}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>刷面:</view>
+    <view class='content'>{{listData.production_info.shua}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>机台号:</view>
+    <view class='content'>{{listData.production_info.machine}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>备注:</view>
+    <view class='content'>{{listData.production_info.note}}</view> 
+  </view> 
+
+
+  <view class='divider'>大切组</view>
+
+  <view class='row'>
+    <view class='title'>荒料规格:</view>
+    <view class='content'>{{listData.daqie.huang}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>大板规格:</view>
+    <view class='content'>{{listData.daqie.daban}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>总片数:</view>
+    <view class='content'>{{listData.daqie.total_number_piece}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>其中边皮数:</view>
+    <view class='content'>{{listData.daqie.bian_piece}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>件数:</view>
+    <view class='content'>{{listData.daqie.piece}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>平整度:</view>
+    <view class='content'>{{listData.daqie.flatness}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>上料时间:</view>
+    <view class='content'>{{listData.daqie.date_up}}</view> 
+  </view> 
+
+
+  <view class='row'>
+    <view class='title'>下料时间:</view>
+    <view class='content'>{{listData.daqie.date_down}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>切割日期:</view>
+    <view class='content'>{{listData.daqie.date_cut}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>锯条使用车数:</view>
+    <view class='content'>{{listData.daqie.car_number}}</view> 
+  </view> 
+
+
+  <view class='row'>
+    <view class='title'>当班负责人:</view>
+    <view class='content'>{{listData.daqie.worker_responsible}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>大切主管:</view>
+    <view class='content'>{{listData.daqie.qie_manager}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>切割确认:</view>
+    <view class='content'>{{listData.daqie.cut_confirm}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>备注:</view>
+    <view class='content'>{{listData.daqie.note}}</view> 
+  </view> 
+
+  <view class='divider'>补胶组</view>
+
+  <view class='row'>
+    <view class='title'>片数:</view>
+    <view class='content'>{{listData.glue.number_piece}}</view> 
+  </view> 
+
+  <view class="line">
+    </view>
+
+
+  <view class='row'>
+    <view class='title'>点胶/跑胶胶水:</view>
+    <view class='content'>{{listData.glue.dian}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>日期:</view>
+    <view class='content'>{{listData.glue.date_pao}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>胶水用量:</view>
+    <view class='content'>{{listData.glue.glue_used}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>调胶人:</view>
+    <view class='content'>{{listData.glue.glue_man}}</view> 
+  </view> 
+
+  <view class="line">
+    </view>
+
+  <view class='row'>
+    <view class='title'>背网胶水:</view>
+    <view class='content'>{{listData.glue.beiwang_glue}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>日期:</view>
+    <view class='content'>{{listData.glue.date_bei}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>胶水用量:</view>
+    <view class='content'>{{listData.glue.glue_used_beiwang}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>调胶人:</view>
+    <view class='content'>{{listData.glue.glue_man_beiwnag}}</view> 
+  </view> 
+
+  <view class="line">
+    </view>
+
+  <view class='row'>
+    <view class='title'>刷面胶水:</view>
+    <view class='content'>{{listData.glue.shua_glue}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>日期:</view>
+    <view class='content'>{{listData.glue.date_shua}}</view> 
+  </view> 
+
+
+  <view class='row'>
+    <view class='title'>胶水用量:</view>
+    <view class='content'>{{listData.glue.glue_used_shua}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>调胶人:</view>
+    <view class='content'>{{listData.glue.glue_man_shua}}</view> 
+  </view> 
+
+  <view class="line">
+    </view>
+
+  <view class='row'>
+    <view class='title'>卸台车:</view>
+    <view class='content'>{{listData.glue.xie_car}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>挖补/片:</view>
+    <view class='content'>{{listData.glue.repair_piece}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>拼接/片:</view>
+    <view class='content'>{{listData.glue.combine_piece}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>加筋/片:</view>
+    <view class='content'>{{listData.glue.add_piece}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>当班负责人:</view>
+    <view class='content'>{{listData.glue.worker_responsible_glue}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>补胶主管:</view>
+    <view class='content'>{{listData.glue.glue_manager}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>备注:</view>
+    <view class='content'>{{listData.glue.note_3}}</view> 
+  </view> 
+
+  <view class='divider'>磨机组</view>
+
+  <view class='row' wx:if="{{listData.moji.cumo.IsChosen}}">
+    <view class='title'>粗磨:</view>
+    <view class='content'>{{listData.moji.cumo.date}}</view> 
+  </view> 
+
+  <view class='row' wx:if="{{listData.moji.fanggu.IsChosen}}">
+    <view class='title'>仿古面:</view>
+    <view class='content'>{{listData.moji.fanggu.date}}</view> 
+  </view> 
+
+  <view class='row' wx:if="{{listData.moji.guang.IsChosen}}">
+    <view class='title'>光面:</view>
+    <view class='content'>{{listData.moji.guang.date}}</view> 
+  </view> 
+
+  <view class='row' wx:if="{{listData.moji.yaguang.IsChosen}}">
+    <view class='title'>哑光面:</view>
+    <view class='content'>{{listData.moji.yaguang.date}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(1)件:</view>
+    <view class='content'>{{listData.moji.piece_number_1}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(2)件:</view>
+    <view class='content'>{{listData.moji.piece_number_2}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(3)件:</view>
+    <view class='content'>{{listData.moji.piece_number_3}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(4)件:</view>
+    <view class='content'>{{listData.moji.piece_number_4}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(5)件:</view>
+    <view class='content'>{{listData.moji.piece_number_5}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(6)件:</view>
+    <view class='content'>{{listData.moji.piece_number_6}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(7)件:</view>
+    <view class='content'>{{listData.moji.piece_number_7}}</view> 
+  </view> 
+
+  <view class='row'>
+    <view class='title'>第(8)件:</view>
+    <view class='content'>{{listData.moji.piece_number_8}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>第(9)件:</view>
+    <view class='content'>{{listData.moji.piece_number_9}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>总片数:</view>
+    <view class='content'>{{listData.moji.total_pian}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>总件数:</view>
+    <view class='content'>{{listData.moji.total_piece}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>质检员:</view>
+    <view class='content'>{{listData.moji.checker}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>磨机手:</view>
+    <view class='content'>{{listData.moji.moji_worker}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>磨机主管:</view>
+    <view class='content'>{{listData.moji.moji_manager}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>备注:</view>
+    <view class='content'>{{listData.moji.note_4}}</view> 
+  </view>
+
+  <view class='row'>
+    <view class='title'>光板备注:</view>
+    <view class='content'>{{listData.moji.note_ban}}</view> 
+  </view>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+</view>
+
+
+</view>
+
+<van-button type='primary' size='large' bind:click='getLink'> 生成Excel表格 </van-button>
+
+
+

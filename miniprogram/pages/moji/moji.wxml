@@ -1,0 +1,231 @@
+<view class='title'>磨机组</view>
+
+<form bindsubmit='formsubmit'>
+  <view style="height:auto;width:90%; margin:auto;font-size:40rpx; margin-top:15rpx">
+
+    <view class='column'>
+      <text>品种: </text>
+      <input class='input-column'type="text" name='name' value='{{name}}' placeholder="品种" />
+    </view>
+    <view class='column'>
+      <text>编号: </text>
+      <input class='input-column'type="text" name='model' value='{{model}}' placeholder="编号" />
+    </view>
+
+    
+
+<view style="margin-top:15rpx">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange" >
+      <van-checkbox name="a">粗磨</van-checkbox>
+      <view class='timepicker'>
+
+        <van-cell title-style='font-size:35rpx' title="日期" value="{{ date_in_a }}" bind:click="onDisplay_up" size='large' is-link />
+        <van-popup show="{{ show_up }}" bind:close="onClose_up" position="bottom">
+          <van-datetime-picker
+          type="date"
+          value="{{ currentDate_up }}"
+          bind:input="onInput_up"
+          min-date="{{ minDate }}"
+          formatter="{{ formatter }}"
+          bind:cancel="onClose_up"
+          bind:confirm='onConfirm_up'
+          />
+        </van-popup>
+
+      </view>
+
+   <van-checkbox name="b">哑光面</van-checkbox>
+
+   <view class='timepicker'>
+
+<van-cell title-style='font-size:35rpx' title="日期" value="{{ date_in_b }}" bind:click="onDisplay_down" size='large' is-link />
+<van-popup show="{{ show_down }}" bind:close="onClose_down" position="bottom">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate_down }}"
+  bind:input="onInput_down"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+  bind:cancel="onClose_down"
+  bind:confirm='onConfirm_down'
+  />
+</van-popup>
+
+</view>
+
+<van-checkbox name="c">仿古面</van-checkbox>
+
+<view class='timepicker'>
+
+<van-cell title-style='font-size:35rpx' title="日期" value="{{ date_in_c }}" bind:click="onDisplay_cut" size='large' is-link />
+<van-popup show="{{ show_cut }}" bind:close="onClose_cut" position="bottom">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate_cut }}"
+  bind:input="onInput_cut"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
+  bind:cancel="onClose_cut"
+  bind:confirm='onConfirm_cut'
+  />
+</van-popup>
+
+</view>
+
+<van-checkbox name="d">光面</van-checkbox>
+
+<view class='timepicker'>
+
+  <van-cell title="日期" value="{{ date_in_d }}" bind:click="onDisplay_d" size='large' is-link />
+  <van-popup show="{{ show_d }}" bind:close="onClose_d" position="bottom">
+    <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    bind:input="onInput_d"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:cancel="onClose_d"
+    bind:confirm='onConfirm_d'
+    />
+  </van-popup>
+</view>
+  
+</van-checkbox-group>
+</view>
+
+
+
+
+<view class='column'>
+  <text>第(1)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_1' value='{{piece_number_1}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(2)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_2' value='{{piece_number_2}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(3)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_3' value='{{piece_number_3}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(4)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_4' value='{{piece_number_4}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(5)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_5' value='{{piece_number_5}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(6)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_6' value='{{piece_number_6}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(7)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_7' value='{{piece_number_7}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(8)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_8' value='{{piece_number_8}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(9)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_9' value='{{piece_number_9}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>总片数:</text>
+  <input  type="text"  class='input-column'name='total_pian' value='{{total_pian}}' placeholder="总片数" />
+</view>
+
+<view class='column'>
+  <text>总件数:</text>
+  <input  type="text"  class='input-column'name='total_piece' value='{{total_piece}}' placeholder="总件数" />
+</view>
+
+<view class='column'>
+  <text>质检员:</text>
+  <input  type="text"  class='input-column'name='checker' value='{{checker}}' placeholder="质检员" />
+</view>
+
+<view class='column'>
+  <text>磨机手:</text>
+  <input  type="text"  class='input-column'name='moji_worker' value='{{moji_worker}}' placeholder="磨机手" />
+</view>
+
+<view class='column'>
+  <text>磨机主管:</text>
+  <input  type="text"  class='input-column'name='moji_manager' value='{{moji_manager}}' placeholder="磨机主管" />
+</view>
+
+
+<view class='column'>
+      <text>备注:</text>
+      <textarea auto-height class='input-column'name='note_4' value='{{note_4}}' placeholder="备注" />
+</view>
+
+<view class='column'>
+      <text>光板备注:</text>
+      <textarea auto-height class='input-column'name='note_ban' value='{{note_ban}}' placeholder="光板备注" />
+</view>
+
+</view>
+
+<view class='button'>
+
+  <van-button type="primary" round size='large' form-type='submit'>提交</van-button>
+</view>
+
+<van-popup round show="{{ show_review }}" bind:close="onClose_review" position="bottom">
+  <view style="margin-left:15rpx">
+    <view>品种: {{name}}</view>
+    <view>编号: {{model}}</view>
+    <view class='divider'></view>
+    <view wx:if="{{a}}">粗磨日期: {{date_in_a}}</view>
+    <view wx:if="{{b}}">哑光面日期: {{date_in_b}}</view>
+    <view wx:if="{{c}}">仿古面日期: {{date_in_c}}</view>
+    <view wx:if="{{d}}">光面日期: {{date_in_d}}</view>
+    <view class='divider'></view>
+    <view>第(1)件: {{piece_number_1}}</view>
+    <view>第(2)件: {{piece_number_2}}</view>
+    <view>第(3)件: {{piece_number_3}}</view>
+    <view>第(4)件: {{piece_number_4}}</view>
+    <view>第(5)件: {{piece_number_5}}</view>
+    <view>第(6)件: {{piece_number_6}}</view>
+    <view>第(7)件: {{piece_number_7}}</view>
+    <view>第(8)件: {{piece_number_8}}</view>
+    <view>第(9)件: {{piece_number_9}}</view>
+
+    <view class='divider'></view>
+    <view>总片数: {{total_pian}}</view>
+    <view>总件数: {{total_piece}}</view>
+    <view>质检员: {{checker}}</view>
+    <view>磨机手: {{moji_worker}}</view>
+    <view>磨机主管: {{moji_manager}}</view>
+    <view>备注: {{note_4}}</view>
+    <view>光板备注: {{note_ban}}</view>
+    
+ </view>
+  <view class='end_button'>
+  <view class='left-button'>
+    <van-button color = '#D3D3D3' type="default" round size='large' bind:click="onClose_review">取消</van-button>
+  </view>
+
+  <view class= 'right-button'>
+    <van-button type="primary" round size='large' bind:click="onSave">提交</van-button>
+  </view>
+
+  </view>
+
+</van-popup>
+  
+ 
+</form>

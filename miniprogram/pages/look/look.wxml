@@ -1,0 +1,33 @@
+<van-search placeholder="搜索"  shape="round" bind:search='goSearch'  />
+
+<view class="table">
+ <view class="tr bg-w">
+ <view class="th">品种</view>
+ <view class="th">编号</view>
+ <view class="th ">长宽高</view>
+ <view class="th ">入库日期</view>
+ <view class="th ">出库日期</view>
+ <view class="th ">详情</view>
+ 
+ </view>
+ <block wx:for="{{listData}}" wx:key="index">
+ <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+ <view class="td">{{item.main_info.name}}</view>
+ <view class="td">{{item.main_info.model}}</view>
+ <view class="td">{{item.main_info.length}},{{item.main_info.width}}, {{item.main_info.height}}</view>
+ <view class="td">{{item.main_info.date_in}}</view>
+ <view class="td">{{item.main_info.date_out}}</view>
+ <view class='td'><text class='st-detail' bindtap="gotoDetail" data-id='{{item._id}}'>查看</text> </view>
+ </view>
+ <view class="tr" wx:else>
+  <view class="td">{{item.main_info.name}}</view>
+ <view class="td">{{item.main_info.model}}</view>
+ <view class="td">{{item.main_info.length}},{{item.main_info.width}}, {{item.main_info.height}}</view>
+ <view class="td">{{item.main_info.date_in}}</view>
+ <view class="td">{{item.main_info.date_out}}</view>
+ <view class='td'><text class='st-detail' bindtap="gotoDetail" data-id='{{item._id}}'>查看</text> </view>
+ </view>
+ </block>
+</view>
+
+<view style="height:96rpx"></view>

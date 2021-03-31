@@ -1,0 +1,69 @@
+<view class='header'>
+  入库
+</view>
+
+<form bindsubmit='formsubmit'>
+<view style="height:auto;width:90%; margin:auto;font-size:40rpx">
+
+  <view class='column'>
+      <text>品种: </text>
+    
+  <input class = 'input-column' type="text" name='name' value='{{name}}' placeholder="品种" />
+  </view>
+
+  <view class='column'>
+      <text>编号: </text>
+
+      <input class = 'input-column' type="text" name='model' value='{{model}}'  placeholder="编号" />
+  </view>
+
+  <view class='column'>
+      <text>公司: </text>
+
+      <input class = 'input-column' type="text" name='company' value='{{company}}'  placeholder="公司" />
+  </view>
+
+  <view class='column'>
+      <text>长度: </text>
+      
+      <input class = 'input-column' type="text" name='length' value='{{length}}'  placeholder="长度" />
+    </view>
+
+    <view class='column'>
+      <text>宽度: </text>
+      
+      <input class = 'input-column' type="text" name='width' value='{{width}}'  placeholder="宽度" />
+    </view>
+
+    <view class='column'>
+      <text>高度: </text>
+      
+      <input class = 'input-column' type="text" name='height' value='{{height}}'  placeholder="高度" />
+    </view>
+
+    <view class='column'>
+      <text>重量: </text>
+      
+      <input class = 'input-column' type="text" name='weight' value='{{weight}}'  placeholder="重量" />
+    </view>
+    <view style="height:20rpx"></view>
+
+  <van-cell title="入库日期" value="{{ date_in }}" bind:click="onDisplay" size='large' is-link />
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+<van-datetime-picker type='date' value='{{currentDate_in}}' min-date='{{minDate}}'  bind:cancel="onClose" formatter="{{ formatter }}" bind:confirm="onConfirm" />
+
+</van-popup>
+
+<van-cell title="出库日期" value="{{ date_out }}" bind:click="onDisplayOut" size='large' is-link />
+  <van-popup show="{{ show_out }}" bind:close="onClosOut" position="bottom">
+<van-datetime-picker type='date' value='{{currentDate_out}}' min-date='{{minDate}}'  bind:cancel="onCloseOut" formatter="{{ formatter }}" bind:confirm="onConfirmOut" />
+
+</van-popup>
+
+
+  <button type='primary' form-type="submit"> 提交 </button>
+
+</view>
+
+</form>
+

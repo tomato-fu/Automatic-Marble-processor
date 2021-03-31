@@ -1,0 +1,552 @@
+<view class='header'>
+  编辑
+</view>
+<form bindsubmit='formsubmit'>
+  <view class='title'>基本信息</view>
+<view style="height:auto;width:90%; margin:auto;font-size:40rpx">
+
+    <view class='column'>
+      <text>品种: </text>
+          <input class='input-column'type="text" name='name' value='{{main_info.name}}' placeholder="品种" />
+    </view>
+
+    <view class='column'>
+      <text>编号: </text>
+      <input class='input-column'type="text" name='model' value='{{main_info.model}}' placeholder="编号" />
+    </view>
+
+    <view class='column'>
+    <text>长度: </text>
+      <input class='input-column'type="text" name='length' value='{{main_info.length}}' placeholder="长度" />
+    </view>
+
+    <view class='column'>
+      <text>宽度: </text>
+      <input class='input-column'type="text" name='width' value='{{main_info.width}}' placeholder="宽度" />
+    </view>
+
+    <view class='column'>
+      <text>高度: </text>
+      <input class='input-column'type="text" name='height' value='{{main_info.height}}' placeholder="高度" />
+    </view>
+
+    <view class='column'>
+      <text>重量: </text>
+      <input class='input-column'type="text" name='weight' value='{{main_info.weight}}' placeholder="重量" />
+    </view>
+
+    <view class='column'>
+      <text>公司: </text>
+      <input class='input-column'type="text" name='company' value='{{main_info.company}}' placeholder="公司" />
+    </view>
+
+
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="入库日期" value="{{ main_info.date_in }}" bind:click="onDisplay_in" size='large' is-link />
+      <van-popup show="{{ show_in }}" bind:close="onClose_in" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_in }}"
+        bind:input="onInput_in"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_in"
+        bind:confirm='onConfirm_in'
+        />
+      </van-popup>
+
+</view>
+
+<view class='timepicker'>
+
+    <van-cell title-style='font-size:35rpx' title="出库日期" value="{{ main_info.date_out }}" bind:click="onDisplay_out" size='large' is-link />
+    <van-popup show="{{ show_out }}" bind:close="onClose_out" position="bottom">
+      <van-datetime-picker
+      type="date"
+      value="{{ currentDate_out }}"
+      bind:input="onInput_out"
+      min-date="{{ minDate }}"
+      formatter="{{ formatter }}"
+      bind:cancel="onClose_out"
+      bind:confirm='onConfirm_out'
+      />
+    </van-popup>
+
+</view>
+
+
+
+  
+
+</view>
+
+<view class='title' style="margin-top:100rpx;">生产通知</view>
+
+  <view style="height:auto;width:90%; margin:auto;font-size:40rpx" >
+
+    
+    <view class='column'>
+      <text>厚度: </text>
+      <input class='input-column'type="text" name='thickness' value='{{production_info.thickness}}' placeholder="厚度" />
+    </view>
+
+    <view class='column'>
+      <text>背网: </text>
+      <input class='input-column'type="text" name='beiwang' value='{{production_info.beiwang}}' placeholder="背网" />
+    </view>
+
+    <view class='column'>
+      <text>刷面: </text>
+      <input class='input-column'type="text" name='shua' value='{{production_info.shua}}' placeholder="刷面" />
+    </view>
+
+    <view class='column'>
+      <text>机台号: </text>
+      <input class='input-column'type="text" name='machine' value='{{production_info.machine}}' placeholder="机台号" />
+    </view>
+
+    <view class='column'>
+      <text>备注:</text>
+      <textarea auto-height class='input-column'name='note' value='{{production_info.note}}' placeholder="备注" />
+    </view>
+    
+  </view>
+
+
+
+
+
+<view class='title' style="margin-top:100rpx;">大切组</view>
+
+  <view style="height:auto;width:90%; margin:auto;font-size:40rpx">
+
+    <view class='column'>
+      <text>荒料规格: </text>
+      <input class='input-column'type="text" name='huang' value='{{daqie.huang}}' placeholder="荒料规格" />
+    </view>
+    
+    <view class='column'>
+      <text>大板规格: </text>
+      <input class='input-column'type="text" name='daban' value='{{daqie.daban}}' placeholder="大板规格" />
+    </view>
+
+    <view class='column'>
+      <text>总片数: </text>
+      <input class='input-column'type="text" name='total_number_piece' value='{{daqie.total_number_piece}}' placeholder="总片数" />
+    </view>
+
+    <view class='column'>
+      <text>其中边皮数: </text>
+      <input class='input-column'type="text" name='bian_piece' value='{{daqie.bian_piece}}' placeholder="其中边皮数" />
+    </view>
+
+    <view class='column'>
+      <text>件数:</text>
+      <input  type="text"  class='input-column'name='piece' value='{{daqie.piece}}' placeholder="件数" />
+    </view>
+
+    <view class='column'>
+      <text>平整度:</text>
+      <input  type="text" class='input-column'name='flatness' value='{{daqie.flatness}}' placeholder="平整度" />
+    </view>
+
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="上料时间" value="{{ daqie.date_up }}" bind:click="onDisplay_up" size='large' is-link />
+      <van-popup show="{{ show_up }}" bind:close="onClose_up" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_up }}"
+        bind:input="onInput_up"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_up"
+        bind:confirm='onConfirm_up'
+        />
+      </van-popup>
+      
+    </view>
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="下料时间" value="{{ daqie.date_down }}" bind:click="onDisplay_down" size='large' is-link />
+      <van-popup show="{{ show_down }}" bind:close="onClose_down" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_down }}"
+        bind:input="onInput_down"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_down"
+        bind:confirm='onConfirm_down'
+        />
+      </van-popup>
+      
+    </view>
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="切割日期" value="{{ daqie.date_cut }}" bind:click="onDisplay_cut" size='large' is-link />
+      <van-popup show="{{ show_cut }}" bind:close="onClose_cut" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_cut }}"
+        bind:input="onInput_cut"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_cut"
+        bind:confirm='onConfirm_cut'
+        />
+      </van-popup>
+      
+  </view>
+
+    <view class='column'>
+      <text style="font-size:30rpx">锯条使用车数:</text>
+      <input  type="text" class='input-column'name='car_number' value='{{daqie.car_number}}' placeholder="锯条使用车数" />
+    </view>
+
+    <view class='column'>
+      <text>当班负责人:</text>
+      <input  type="text" class='input-column'name='worker_responsible' value='{{daqie.worker_responsible}}' placeholder="当班负责人" />
+    </view>
+
+    <view class='column'>
+      <text>大切主管:</text>
+      <input  type="text" class='input-column'name='qie_manager' value='{{daqie.qie_manager}}' placeholder="大切主管" />
+    </view>
+
+    <view class='column'>
+      <text>切割确认:</text>
+      <input  type="text" class='input-column'name='cut_confirm' value='{{daqie.cut_confirm}}' placeholder="切割确认" />
+    </view>
+
+    <view class='column'>
+      <text>备注:</text>
+      <textarea auto-height class='input-column'name='note_2' value='{{daqie.note}}' placeholder="备注" />
+    </view>
+    
+  </view>
+
+
+
+<view class='title' style="margin-top:100rpx;">补胶组</view>
+
+  <view style="height:auto;width:90%; margin:auto;font-size:40rpx">
+
+  
+    <view class='column'>
+      <text>片数: </text>
+      <input class='input-column'type="text" name='number_piece' value='{{glue.number_piece}}' placeholder="片数" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+    <view class='column'>
+      <text style="font-size:30rpx">点胶/跑胶胶水: </text>
+      <input class='input-column'type="text" name='dian' value='{{glue.dian}}' placeholder="点胶/跑胶胶水" />
+    </view>
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="日期" value="{{ glue.date_pao }}" bind:click="onDisplay_pao" size='large' is-link />
+      <van-popup show="{{ show_pao }}" bind:close="onClose_pao" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_pao }}"
+        bind:input="onInput_pao"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_pao"
+        bind:confirm='onConfirm_pao'
+        />
+      </van-popup>
+      
+    </view>
+    <view class='column'>
+      <text>胶水用量:</text>
+      <input  type="text"  class='input-column'name='glue_used' value='{{glue.glue_used}}' placeholder="胶水用量" />
+    </view>
+
+    <view class='column'>
+      <text>调胶人:</text>
+      <input  type="text" class='input-column'name='glue_man' value='{{glue.glue_man}}' placeholder="调胶人" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+    <view class='column'>
+      <text style="font-size:30rpx">背网胶水:</text>
+      <input  type="text" class='input-column'name='beiwang_glue' value='{{glue.beiwang_glue}}' placeholder="背网胶水" />
+    </view>
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="日期" value="{{ glue.date_bei }}" bind:click="onDisplay_bei" size='large' is-link />
+      <van-popup show="{{ show_bei }}" bind:close="onClose_bei" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_bei }}"
+        bind:input="onInput_bei"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_bei"
+        bind:confirm='onConfirm_bei'
+        />
+      </van-popup>
+      
+    </view>
+    <view class='column'>
+      <text>胶水用量:</text>
+      <input  type="text"  class='input-column'name='glue_used_beiwang' value='{{glue.glue_used_beiwang}}' placeholder="胶水用量" />
+    </view>
+
+    <view class='column'>
+      <text>调胶人:</text>
+      <input  type="text" class='input-column'name='glue_man_beiwnag' value='{{glue.glue_man_beiwnag}}' placeholder="调胶人" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+    <view class='column'>
+      <text>刷面胶水:</text>
+      <input  type="text" class='input-column'name='shua_glue' value='{{glue.shua_glue}}' placeholder="刷面胶水" />
+    </view>
+
+    <view class='timepicker'>
+
+      <van-cell title-style='font-size:35rpx' title="日期" value="{{ glue.date_shua }}" bind:click="onDisplay_shua" size='large' is-link />
+      <van-popup show="{{ show_shua }}" bind:close="onClose_shua" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate_shua }}"
+        bind:input="onInput_shua"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose_shua"
+        bind:confirm='onConfirm_shua'
+        />
+    </van-popup>
+  </view>
+    
+    <view class='column'>
+      <text>胶水用量:</text>
+      <input  type="text"  class='input-column'name='glue_used_shua' value='{{glue.glue_used_shua}}' placeholder="胶水用量" />
+    </view>
+
+    <view class='column'>
+      <text>调胶人:</text>
+      <input  type="text" class='input-column'name='glue_man_shua' value='{{glue.glue_man_shua}}' placeholder="调胶人" />
+    </view>
+
+    <view class="divider">
+    </view>
+
+
+    <view class='column'>
+      <text>卸台车:</text>
+      <input  type="text" class='input-column'name='xie_car' value='{{glue.xie_car}}' placeholder="卸台车" />
+    </view>
+
+    <view class='column'>
+      <text>挖补/片:</text>
+      <input  type="text" class='input-column'name='repair_piece' value='{{glue.repair_piece}}' placeholder="挖补/片" />
+    </view>
+
+    <view class='column'>
+      <text>拼接/片:</text>
+      <input  type="text" class='input-column'name='combine_piece' value='{{glue.combine_piece}}' placeholder="拼接/片" />
+    </view>
+
+    <view class='column'>
+      <text>加筋/片:</text>
+      <input  type="text" class='input-column'name='add_piece' value='{{glue.add_piece}}' placeholder="加筋/片" />
+    </view>
+
+    <view class='column'>
+      <text>当班负责人:</text>
+      <input  type="text" class='input-column'name='worker_responsible_glue' value='{{glue.worker_responsible_glue}}' placeholder="当班负责人" />
+    </view>
+
+    <view class='column'>
+
+      <text>补胶主管:</text>
+      <input  type="text" class='input-column'name='glue_manager' value='{{glue.glue_manager}}' placeholder="补胶主管" />
+    </view>
+
+    <view class='column'>
+      <text>备注:</text>
+      <textarea auto-height class='input-column'name='note_3' value='{{glue.note_3}}' placeholder="备注" />
+    </view>
+    
+    
+  </view>
+
+
+  <view class='title' style="margin-top:100rpx;">磨机组</view>
+
+ 
+
+    <van-checkbox-group value="{{ moji.result }}" bind:change="onChange" >
+      <van-checkbox name="a">粗磨</van-checkbox>
+      <van-cell title="日期" value="{{ moji.cumo.date }}" bind:click="onDisplay" size='large' is-link />
+      <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+        <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}"
+        bind:input="onInput"
+        min-date="{{ minDate }}"
+        formatter="{{ formatter }}"
+        bind:cancel="onClose"
+        bind:confirm='onConfirm'
+        />
+    </van-popup>
+
+   <van-checkbox name="b">哑光面</van-checkbox>
+
+    <van-cell title="日期" value="{{ moji.yaguang.date }}" bind:click="onDisplay_b" size='large' is-link  />
+    <van-popup show="{{ show_b }}" bind:close="onClose_b" position="bottom">
+      <van-datetime-picker
+      type="date"
+      value="{{ currentDate }}"
+      bind:input="onInput_b"
+      min-date="{{ minDate }}"
+      formatter="{{ formatter }}"
+      bind:cancel="onClose_b"
+      bind:confirm='onConfirm_b'
+
+      />
+    </van-popup>
+
+<van-checkbox name="c">仿古面</van-checkbox>
+
+  <van-cell title="日期" value="{{ moji.fanggu.date }}" bind:click="onDisplay_c" size='large' is-link />
+  <van-popup show="{{ show_c }}" bind:close="onClose_c" position="bottom">
+    <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    bind:input="onInput_c"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:cancel="onClose_c"
+    bind:confirm='onConfirm_c'
+    />
+  </van-popup>
+
+<van-checkbox name="d">光面</van-checkbox>
+
+  <van-cell title="日期" value="{{ moji.guang.date }}" bind:click="onDisplay_d" size='large' is-link />
+  <van-popup show="{{ show_d }}" bind:close="onClose_d" position="bottom">
+    <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    bind:input="onInput_d"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:cancel="onClose_d"
+    bind:confirm='onConfirm_d'
+    />
+  </van-popup>
+
+</van-checkbox-group>
+
+<view style="height:auto;width:90%; margin:auto;font-size:40rpx">
+
+
+
+<view class='column'>
+  <text>第(1)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_1' value='{{moji.piece_number_1}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(2)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_2' value='{{moji.piece_number_2}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(3)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_3' value='{{moji.piece_number_3}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(4)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_4' value='{{moji.piece_number_4}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(5)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_5' value='{{moji.piece_number_5}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(6)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_6' value='{{moji.piece_number_6}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(7)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_7' value='{{moji.piece_number_7}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(8)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_8' value='{{moji.piece_number_8}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>第(9)件:</text>
+  <input  type="text"  class='input-column'name='piece_number_9' value='{{moji.piece_number_9}}' placeholder="片数" />
+</view>
+
+<view class='column'>
+  <text>总片数:</text>
+  <input  type="text"  class='input-column'name='total_pian' value='{{moji.total_pian}}' placeholder="总片数" />
+</view>
+
+<view class='column'>
+  <text>总件数:</text>
+  <input  type="text"  class='input-column'name='total_piece' value='{{moji.total_piece}}' placeholder="总件数" />
+</view>
+
+<view class='column'>
+  <text>质检员:</text>
+  <input  type="text"  class='input-column'name='checker' value='{{moji.checker}}' placeholder="质检员" />
+</view>
+
+<view class='column'>
+  <text>磨机手:</text>
+  <input  type="text"  class='input-column'name='moji_worker' value='{{moji.moji_worker}}' placeholder="磨机手" />
+</view>
+
+<view class='column'>
+  <text>磨机主管:</text>
+  <input  type="text"  class='input-column'name='moji_manager' value='{{moji.moji_manager}}' placeholder="磨机主管" />
+</view>
+
+
+<view class='column'>
+      <text>备注:</text>
+      <textarea auto-height class='input-column'name='note_4' value='{{moji.note_4}}' placeholder="备注" />
+</view>
+
+<view class='column'>
+      <text>光板备注:</text>
+      <textarea auto-height class='input-column'name='note_ban' value='{{moji.note_ban}}' placeholder="光板备注" />
+</view>
+
+<button style="margin-top:100rpx" type='primary' form-type="submit"> 提交 </button>
+
+</view>
+
+
+
+
+</form>
+
