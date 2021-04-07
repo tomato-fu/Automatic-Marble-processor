@@ -1,7 +1,7 @@
 # Automatic-Marble-processor
 A Wechat mini program for processing marbles using Javascript and Wechat Cloud base development
 
-##Prerequisite
+## Prerequisite
 Developers who want to use it have to download Wechat DevTools.<br/>
 Here is a link to it [Download Wechat DevTools](https://developers.weixin.qq.com/miniprogram/en/dev/devtools/download.html).<br/>
 
